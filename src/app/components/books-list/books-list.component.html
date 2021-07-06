@@ -1,0 +1,22 @@
+<h1> BOOKS LIST </h1>
+<input type="search" id="site-search" name="q"
+       aria-label="Search through site content" onsubmit="getBooksNameContaining(name)">
+<table class="table table-striped">
+<thead>
+<tr>
+  <th scope="col">Image</th>
+  <th scope="col">Name</th>
+  <th scope="col">Description</th>
+  <th scope="col">Price</th>
+</tr>
+</thead>
+<tbody>
+<tr *ngFor="let x of books">
+  <td><a [routerLink]= "['/books/view', x.id]"><img src="{{x.image}}"class="img-thumbnail"></a></td>
+  <td>{{ x.name }}</td>
+  <td>{{ x.description}}</td>
+  <td>{{ x.price | currency}}</td>
+  </tr>
+  </tbody>
+  </table>
+  
